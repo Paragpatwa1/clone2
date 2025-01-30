@@ -1,5 +1,7 @@
 import React from "react";
 import CountUp from "react-countup";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesome
+import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'; // Import Icons
 function Home() {
   const counters = [
     { value: 500, label: "Projects Delivered Expertise in Industrial Solutions" },
@@ -7,6 +9,8 @@ function Home() {
     { value: 20, label: "Years of Expertise in Industrial Solutions" },
     { value: 100, label: "Skilled Professionals Driving Innovation." },
   ];
+ 
+  const iconSize = '3rem'; // Increased icon size (using rem for scalability)
   return (
     <>
       {/* Responsive Adjustments */}
@@ -647,134 +651,146 @@ function Home() {
       >
       </div>
       <div className="container my-5">
-        {/* Contact Us Header */}
-        <div className="row my-5 align-items-center">
-          {/* Left Section - Contact Details */}
-          <div className="col-md-6 order-md-1 text-center text-md-start">
-            <div className="contactus">
-              <h1 className="display-5 fw-bold mb-3">Contact Us</h1>
-              <p className="text-muted mb-4">
-                Get in touch with Jash Corporation to explore how we can support your goals with precision-engineered solutions.
-              </p>
-            </div>
+      <div className="row my-5 align-items-center">
+        <div className="col-md-6 order-md-1 text-center text-md-start">
+          {/* Contact Details */}
+          <div className="contactus">
+            <h1 className="display-5 fw-bold mb-3">Contact Us</h1>
+            <p className="text-muted mb-4">
+              Get in touch with Jash Corporation to explore how we can support your goals with precision-engineered solutions.
+            </p>
+          </div>
+    
 
-            {/* Address and Questions Sections */}
-            <div className="row g-4 align-items-center">
-              {/* Address Section */}
-              <div className="col-md-6 d-flex justify-content-start">
-                <div className="d-flex align-items-start" style={{ maxWidth: "400px" }}>
-                  <img src="./images/10.png" alt="Visit Us" className="me-3" style={{ width: "50px" }} />
-                  <div>
-                    <h5 className="fw-bold">Visit Us</h5>
-                    <p className="mb-1">Sumer Nagar, Building</p>
-                    <p className="mb-1">NO.1, S.V.Road, Borivali West</p>
-                    <p>Mumbai 400092</p>
-                  </div>
-                </div>
-              </div>
 
-              {/* Questions Section */}
-              <div className="col-md-6 d-flex justify-content-start">
-                <div className="d-flex flex-column" style={{ maxWidth: "400px" }}>
-                  <div className="d-flex align-items-start mb-3">
-                    <img src="./images/12.png" alt="Call Us" className="me-3" style={{ width: "50px" }} />
-                    <div>
-                      <h5 className="fw-bold">Have Any Questions?</h5>
-                      <a href="tel:+919820127073" style={{ color: "black", textDecoration: "none" }}>+91 98201 27073</a> {/* Corrected closing tag */}
-                    </div>
-                  </div>
-                  <div className="d-flex align-items-start">
-                    <img src="./images/9.png" alt="Mail Us" className="me-3" style={{ width: "50px" }} />
-                    <div>
-                      <h5 className="fw-bold">Mail Us</h5>
-                      <a href="mailto:jashcorporation@gmail.com" style={{ color: "black", textDecoration: "none" }}> jashcorporation@gmail.com</a>
-                    </div>
-                  </div>
-                </div>
+          <div className="container my-5">
+      <div className="row">
+        {/* Left side: Address */}
+        <div className="col-md-6 order-md-1"> {/* Correct order for address */}
+          <div className="d-flex flex-column justify-content-center h-100">
+            <div className="d-flex align-items-center">
+              <FontAwesomeIcon 
+                icon={faMapMarkerAlt} 
+                className="me-3" 
+                style={{ fontSize: iconSize, color: '#0056b3' }} 
+              />
+              <div>
+                <h5 className="fw-bold">Visit Us</h5>
+                <p className="mb-0">Sumer Nagar, Building<br />
+                  NO.1,<br />
+                  S.V.Road, Borivali West<br />
+                  Mumbai 400092</p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Section - Contact Form */}
-          <div className="col-md-6 order-md-2">
-            <div className="p-4 shadow-lg rounded bg-light">
-              <h4 className="text-center mb-4">Send Us a Message</h4>
-              <form>
-                <div className="row mb-3">
-                  <div className="col">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Name"
-                      required
-                      style={{
-                        borderRadius: "0.5rem",
-                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                      }}
-                    />
-                  </div>
-                  <div className="col">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Phone"
-                      required
-                      style={{
-                        borderRadius: "0.5rem",
-                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Email"
-                    required
-                    style={{
-                      borderRadius: "0.5rem",
-                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    }}
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Subject"
-                    required
-                    style={{
-                      borderRadius: "0.5rem",
-                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    }}
-                  />
-                </div>
-                <div className="mb-3">
-                  <textarea
-                    className="form-control"
-                    rows="3"
-                    placeholder="Message"
-                    required
-                    style={{
-                      borderRadius: "0.5rem",
-                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    }}
-                  ></textarea>
-                </div>
-                <button
-                  className="btn btn-primary w-100 py-2 rounded-3 shadow"
-                  style={{ fontWeight: "bold", transition: "all 0.3s ease" }}
-                  onMouseOver={(e) => (e.target.style.backgroundColor = "#0051cc")}
-                  onMouseOut={(e) => (e.target.style.backgroundColor = "#0066FF")}
-                >
-                  Send Message
-                </button>
-              </form>
+        {/* Right side: Phone and Email */}
+        <div className="col-md-6 order-md-2"> {/* Correct order for phone/email */}
+          <div className="d-flex flex-column gap-4 justify-content-center h-100">
+            <div className="d-flex align-items-center">
+              <FontAwesomeIcon 
+                icon={faPhone} 
+                className="me-3" 
+                style={{ fontSize: iconSize, color: '#0056b3' }} 
+              />
+              <div>
+                <h5 className="fw-bold">Have Any Questions?</h5>
+                <a href="tel:+919820127073" className="text-decoration-none text-dark">+91 98201 27073</a>
+              </div>
+            </div>
+
+            <div className="d-flex align-items-center">
+              <FontAwesomeIcon 
+                icon={faEnvelope} 
+                className="me-3" 
+                style={{ fontSize: iconSize, color: '#0056b3' }} 
+              />
+              <div>
+                <h5 className="fw-bold">Mail Us</h5>
+                <a href="mailto:jashcorporation@gmail.com" className="text-decoration-none text-dark">jashcorporation@gmail.com</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+
+
+
+
+
+
+
+
+        </div>
+
+        {/* Contact Form */}
+        <div className="col-md-6 order-md-2">
+          <div className="p-4 shadow-lg rounded bg-light">
+            <h4 className="text-center mb-4">Send Us a Message</h4>
+            <form>
+              <div className="row mb-3">
+                <div className="col">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Name"
+                    required
+                    style={{ borderRadius: "0.5rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}
+                  />
+                </div>
+                <div className="col">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Phone"
+                    required
+                    style={{ borderRadius: "0.5rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}
+                  />
+                </div>
+              </div>
+              <div className="mb-3">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Email"
+                  required
+                  style={{ borderRadius: "0.5rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Subject"
+                  required
+                  style={{ borderRadius: "0.5rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}
+                />
+              </div>
+              <div className="mb-3">
+                <textarea
+                  className="form-control"
+                  rows="3"
+                  placeholder="Message"
+                  required
+                  style={{ borderRadius: "0.5rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}
+                ></textarea>
+              </div>
+              <button
+                className="btn btn-primary w-100 py-2 rounded-3 shadow"
+                style={{ fontWeight: "bold", transition: "all 0.3s ease" }}
+                onMouseOver={(e) => (e.target.style.backgroundColor = "#0051cc")}
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#0066FF")}
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -841,7 +857,7 @@ function Home() {
             <div className="col-md-4 mb-4">
               <h5 className="fw-bold">Contact Us</h5>
               <p className="mb-2">
-                <span className="me-2">📞</span> +91 98201 27073
+                <span className="me-2">📞</span><a href="tel:+919820127073" style={{color:"white", textDecoration: "none"}}>+91 98201 27073</a>
               </p>
               <p className="mb-2">
                 <span className="me-2">✉️</span><a href="mailto:jashcorporation@yahoo.co.in" style={{ color: "white", textDecoration: "none" }}> jashcorporation@yahoo.co.in </a>
