@@ -1,5 +1,4 @@
 import React from "react";
-import HeroImage from "./hero-section.png"; // Update the path as neede
 import CountUp from "react-countup";
 function Home() {
   const counters = [
@@ -10,7 +9,10 @@ function Home() {
   ];
   return (
     <>
+      {/* Responsive Adjustments */}
+
       {/* Navbar */}
+
       <nav
         className="navbar navbar-expand-lg"
         style={{ background: "linear-gradient(to right, #3A7BD5, #3A6073)" }}
@@ -18,7 +20,7 @@ function Home() {
         <div className="container">
           <a
             className="navbar-brand"
-            href="#"
+            href="/"
             style={{
               fontWeight: "bold",
               fontSize: "24px",
@@ -43,91 +45,172 @@ function Home() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <a className="nav-link text-white" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="#">About Us</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="#">Products</a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="btn btn-primary text-white"
-                  href="#"
-                  style={{ borderRadius: "10px", fontWeight: "bold", padding: "6px 15px" }}
-                >
-                  Contact Us
-                </a>
-              </li>
-            </ul>
+    
+
+<ul className="navbar-nav ms-auto">
+  <li className="nav-item mx-4"> {/* Increased to mx-3 */}
+    <a className="nav-link text-white" href="#">Home</a>
+  </li>
+  <li className="nav-item mx-4"> {/* Increased to mx-3 */}
+    <a className="nav-link text-white" href="#">About Us</a>
+  </li>
+  <li className="nav-item mx-4"> {/* Increased to mx-3 */}
+    <a className="nav-link text-white" href="#">Products</a>
+  </li>
+  <li className="nav-item mx-4"> {/* No margin on the last item */}
+    <a
+      className="btn btn-primary text-white"
+      href="#"
+      style={{ borderRadius: "10px", fontWeight: "bold", padding: "6px 15px" }}
+    >
+      Contact Us
+    </a>
+  </li>
+</ul>
           </div>
         </div>
       </nav>
       <div style={{
-  position: "relative",
-  width: "100%",
-  height: "100vh",
-  display: "flex",
-  alignItems: "center",
-}}>
-  {/* Background Image with Overlay */}
-  <div style={{
-    position: "absolute",
-    inset: 0,
-    backgroundImage: "url('./images/153.png')", /* Replace with actual image path */
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}>
-  </div>
+        position: "relative",
+        width: "100%",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        overflow: "hidden",
+      }}>
+        {/* Background Image */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('./images/153.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          zIndex: -1,
+        }} />
 
-  <div style={{
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "start",
-    padding: "20px 50px", /* Add padding for better spacing on smaller screens */
-    maxWidth: "700px", /* Set a maximum width for the content area */
-    margin: "0 auto", /* Center the content horizontally */
-  }}>
-    <span style={{ fontSize: "calc(2rem + 2vw)", fontWeight: "bolder", color: "#000000", marginBottom: "-47px" }}>Powering</span>
-    <span style={{ fontSize: "calc(2rem + 2vw)", fontWeight: "bolder", color: "#000000", marginBottom: "-47px" }}>Industries</span>
-    <span style={{ fontSize: "calc(2rem + 2vw)", fontWeight: "bolder", color: "#000000", marginBottom: "-47px" }}>With</span>
-    <span style={{ fontSize: "calc(2rem + 2vw)", fontWeight: "bolder", color: "#000000", marginBottom: "-47px" }}>Precision</span>
-    <span style={{ fontSize: "calc(2rem + 2vw)", fontWeight: "bolder", color: "#000000" }}>Reliability</span>
-    <div style={{ width: "100%" }}>
-      <p>Delivering cutting-edge electrical solutions designed to enhance efficiency and ensure unwavering reliability in demanding industrial environments.</p>
-    </div>
-  </div>
+        {/* Content Container */}
+        <div style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          padding: "2rem",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          width: "100%",
+          flexWrap: "wrap",
+        }}>
+          {/* Text Content - Left Side */}
+          <div style={{
+            flex: "1 1 50%",
+            minWidth: "300px",
+            paddingRight: "2rem",
+          }}>
+            <h1 style={{
+              fontSize: "clamp(2rem, 6vw, 4rem)",
+              fontWeight: 900,
+              lineHeight: 1.2,
+              marginBottom: "1.5rem",
+              color: "#000",
+              textAlign: "left",
+            }}>
+              Powering<br />
+              Industries<br />
+              With<br />
+              Precision And<br />
+              Reliability.
+            </h1>
 
-  {/* Right Side Images */}
-  <div style={{
-    display: "flex",
-    flexWrap: "wrap", /* Allow images to wrap on smaller screens */
-    width: "calc(33.333% - 1px)", /* Adjust width as needed */
-    justifyContent: "flex-end", /* Align images to the right */
-  }}>
-    <div style={{ position: "relative" }}> <div style={{ position: "absolute", left: "100px", top: "70px" }}> <img src="./images/15.png" height="570px" width="570px" alt="Image 1" /> </div> <div style={{ marginLeft: "220px", top: "150px" }}> <img src="./images/16.png" height="600px" width="450px" alt="Image 2" /> </div> </div>
-  </div>
-</div>
+            <p style={{
+              fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+              maxWidth: "500px",
+              lineHeight: 1.5,
+              color: "#333",
+              textAlign: "left",
+            }}>
+              Delivering cutting-edge electrical solutions designed to enhance efficiency and
+              ensure unwavering reliability in demanding industrial environments.
+            </p>
+          </div>
 
+          {/* Image Container - Right Side */}
+          <div style={{
+            flex: "1 1 45%",
+            minWidth: "300px",
+            position: "relative",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}>
+            <img
+              src="./images/poroo.png"
+              alt="Technology"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                width: "400px",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </div>
 
-{/* Counter Section */}
-<div class="container text-center my-5">
-  <div class="row">
-    {counters.map((counter, index) => (
-      <div key={index} class="col-md-3">
-        <div class="card p-4 shadow-sm bg-primary text-white rounded">
-          <h2>
-            <CountUp end={counter.value} duration={3} />+
-          </h2>
-          <p>{counter.label}</p>
+        {/* Responsive Adjustments */}
+        <style jsx>{`
+    @media (max-width: 1024px) {
+      .content-container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+      
+      .image-container {
+        justify-content: center;
+        margin-top: 2rem;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem !important;
+      }
+      
+      p {
+        font-size: 1rem !important;
+        max-width: 100% !important;
+      }
+      
+      img {
+        width: 100% !important;
+        max-width: 500px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .text-content {
+        padding-right: 0 !important;
+      }
+      
+      h1 {
+        font-size: 2rem !important;
+      }
+    }
+  `}</style>
+      </div>
+      {/* Counter Section */}
+      <div class="container text-center my-5">
+        <div class="row">
+          {counters.map((counter, index) => (
+            <div key={index} class="col-md-3">
+              <div class="card p-4 shadow-sm bg-primary text-white rounded">
+                <h2>
+                  <CountUp end={counter.value} duration={3} />+
+                </h2>
+                <p>{counter.label}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
 
       {/* About Section */}
       <section
@@ -167,7 +250,16 @@ function Home() {
               </p>
 
               {/* Text and Image Side by Side */}
-              <div style={{ display: "flex", alignItems: "center", marginTop: "80px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginTop: "40px",
+                  gap: "20px", // Adds spacing between the text and image
+                }}
+              >
                 <img
                   src="/images/electronics-engineer.png"
                   alt="Worker in industry"
@@ -176,17 +268,31 @@ function Home() {
                     height: "auto",
                     borderRadius: "10px",
                     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
-                    marginLeft: "50px",
+                    flexShrink: 0, // Prevents the image from shrinking
                   }}
                 />
-                <p style={{ marginLeft: "25px" }}>
-                  At Jash Corporation, quality and innovation are our benchmarks. Join us in building<br />
+                <p
+                  style={{
+                    marginLeft: "10px",
+                    textAlign: "justify",
+                    flex: "1", // Ensures the text takes up remaining space
+                    minWidth: "200px", // Prevents the text from being too narrow
+                  }}
+                >
+                  At Jash Corporation, quality and innovation are our benchmarks. Join us in building
                   solutions that drive industrial excellence and shape a brighter, electrified future.
                 </p>
               </div>
 
               {/* More Button */}
-              <div style={{ textAlign: "left", marginTop: "20px" }}>
+              <div
+                style={{
+                  textAlign: "left",
+                  marginTop: "20px",
+                  display: "flex",
+                  justifyContent: "center", // Centers the button on smaller screens
+                }}
+              >
                 <button
                   style={{
                     backgroundColor: "#007bff",
@@ -196,8 +302,10 @@ function Home() {
                     border: "none",
                     borderRadius: "5px",
                     cursor: "pointer",
-                    marginLeft: "50%"
+                    transition: "background-color 0.3s ease",
                   }}
+                  onMouseOver={(e) => (e.target.style.backgroundColor = "#0056b3")}
+                  onMouseOut={(e) => (e.target.style.backgroundColor = "#007bff")}
                 >
                   More
                 </button>
@@ -206,34 +314,50 @@ function Home() {
           </div>
         </div>
       </section>
-      <div>
-        {/* Banner */}
+      {/* Banner */}
+      <div
+        style={{
+          background: "linear-gradient(to right, #3A7BD5, #3A6073)",
+          color: "white",
+          textAlign: "center",
+          padding: "10px",
+          fontSize: "16px",
+          fontWeight: "bold",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <span style={{ margin: "0 8px" }}>⭐</span>
+        <span>
+          Our Happy Customers Would Love to Buy Again! | 98% Customer
+          Satisfaction Rate | Trusted by Industry Leaders
+        </span>
+        <span style={{ margin: "0 8px" }}>⭐</span>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "40px",
+        }}
+      >
+        <h2 style={{ fontSize: "2.5em", marginBottom: "20px" }}>
+          We Care About Our Customers Experience
+        </h2>
         <div
           style={{
-            background: "linear-gradient(to right, #3A7BD5, #3A6073)",
-            color: "white",
-            textAlign: "center",
-            padding: "10px",
-            fontSize: "16px",
-            fontWeight: "bold",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            width: "100%",
+            gap: "20px",
+            flexWrap: "wrap", // Added to make it wrap on small screens
+            justifyContent: "center", // Center items on smaller screens
           }}
         >
-          <span style={{ margin: "0 8px" }}>⭐</span>
-          <span>
-            Our Happy Customers Would Love to Buy Again! | 98% Customer
-            Satisfaction Rate | Trusted by Industry Leaders
-          </span>
-          <span style={{ margin: "0 8px" }}>⭐</span>
-        </div>
-
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "40px" }}>
-        <h2 style={{ fontSize: "2.5em", marginBottom: "20px" }}>We Care About Our Customers Experience</h2>
-        <div style={{ display: "flex", justifyContent: "space-between", width: "80%", gap: "20px" }}>
-
           {/* Testimonial 1 */}
           <div
             style={{
@@ -249,14 +373,18 @@ function Home() {
               src="./images/1.png"
               alt="Karia Lynn"
               style={{
-                width: "80px",
-                height: "80px",
+                width: "80%",  // Set width as a percentage of the parent container
+                maxWidth: "80px",  // Max width to maintain the size
+                height: "auto",  // Maintain the aspect ratio
                 borderRadius: "50%",
                 marginBottom: "10px",
               }}
             />
             <h3 style={{ fontSize: "1.2em", marginBottom: "10px" }}>Karia Lynn</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
             <div style={{ margin: "10px 0" }}>★★☆☆☆</div>
           </div>
 
@@ -275,14 +403,18 @@ function Home() {
               src="./images/2.png"
               alt="John Doe"
               style={{
-                width: "80px",
-                height: "80px",
+                width: "80%",  // Set width as a percentage of the parent container
+                maxWidth: "80px",  // Max width to maintain the size
+                height: "auto",  // Maintain the aspect ratio
                 borderRadius: "50%",
                 marginBottom: "10px",
               }}
             />
             <h3 style={{ fontSize: "1.2em", marginBottom: "10px" }}>John Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
             <div style={{ margin: "10px 0" }}>★★★☆☆</div>
           </div>
 
@@ -301,22 +433,43 @@ function Home() {
               src="./images/3.png"
               alt="Jane Smith"
               style={{
-                width: "80px",
-                height: "80px",
+                width: "80%",  // Set width as a percentage of the parent container
+                maxWidth: "80px",  // Max width to maintain the size
+                height: "auto",  // Maintain the aspect ratio
                 borderRadius: "50%",
                 marginBottom: "10px",
               }}
             />
             <h3 style={{ fontSize: "1.2em", marginBottom: "10px" }}>Jane Smith</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
             <div style={{ margin: "10px 0" }}>★☆☆☆☆</div>
           </div>
-
         </div>
       </div>
 
+      {/* Responsive Adjustments */}
+      <style jsx>{`
+  @media (max-width: 768px) {
+    div {
+      padding: 20px;
+    }
+    h2 {
+      font-size: 1.8em;
+    }
+    .testimonial {
+      width: 90%;
+    }
+    img {
+      width: 60%; /* Adjust the image size on smaller screens */
+      max-width: 70px; /* Ensure the image doesn't grow too large */
+    }
+  }
+`}</style>
 
-      {/* Banner */}
+
       <div
         style={{
           background: "linear-gradient(to right, #3A7BD5, #3A6073)",
@@ -328,14 +481,18 @@ function Home() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: "25px"
+          height: "25px",
         }}
       >
+
       </div>
+
       <div
         style={{
           display: "flex",
+          flexDirection: "row",
           alignItems: "center",
+          justifyContent: "space-between",
           padding: "60px 20px",
           maxWidth: "1500px",
           margin: "auto",
@@ -349,23 +506,23 @@ function Home() {
             flex: "1",
             position: "relative",
             clipPath: "polygon(0 0, 85% 0, 100% 100%, 0% 100%)",
-
             minWidth: "350px",
+            marginBottom: "30px",
           }}
         >
           <img
             src="./images/4.png"
             alt="Worker"
             style={{
-              width: "532.48px",
-              height: "628px",
+              width: "100%",
+              height: "auto",
               objectFit: "cover",
-
+              borderRadius: "8px",
             }}
           />
         </div>
 
-        {/* Right Side - Content */}
+        {/* Right Side - Products */}
         <div
           style={{
             flex: "2",
@@ -404,7 +561,7 @@ function Home() {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
               gap: "20px",
-              marginTop: "170px"
+              marginTop: "40px",
             }}
           >
             {/* Product List */}
@@ -430,7 +587,16 @@ function Home() {
                 img: "./images/8.png",
               },
             ].map((product) => (
-              <div key={product.id} style={{ textAlign: "center", padding: "15px" }}>
+              <div
+                key={product.id}
+                style={{
+                  textAlign: "center",
+                  padding: "15px",
+                  background: "#f7f7f7",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                }}
+              >
                 <p style={{ marginBottom: "10px", fontSize: "1rem" }}>{product.text}</p>
                 <img
                   src={product.img}
@@ -450,7 +616,10 @@ function Home() {
                     borderRadius: "5px",
                     cursor: "pointer",
                     fontWeight: "bold",
+                    transition: "background-color 0.3s ease",
                   }}
+                  onMouseOver={(e) => e.target.style.backgroundColor = "#0051cc"}
+                  onMouseOut={(e) => e.target.style.backgroundColor = "#0066FF"}
                 >
                   Get Quote
                 </button>
@@ -459,6 +628,9 @@ function Home() {
           </div>
         </div>
       </div>
+
+
+
       {/* Banner */}
       <div
         style={{
@@ -478,16 +650,16 @@ function Home() {
         {/* Contact Us Header */}
         <div className="row my-5 align-items-center">
           {/* Left Section - Contact Details */}
-          <div className="col-md-6 order-md-1">
-            <div className="text-center contactus">
-              <h1 className="display-5 fw-bold">Contact Us</h1>
-              <p className="text-muted">
+          <div className="col-md-6 order-md-1 text-center text-md-start">
+            <div className="contactus">
+              <h1 className="display-5 fw-bold mb-3">Contact Us</h1>
+              <p className="text-muted mb-4">
                 Get in touch with Jash Corporation to explore how we can support your goals with precision-engineered solutions.
               </p>
             </div>
 
             {/* Address and Questions Sections */}
-            <div className="row g-4 align-items-center mt-4">
+            <div className="row g-4 align-items-center">
               {/* Address Section */}
               <div className="col-md-6 d-flex justify-content-start">
                 <div className="d-flex align-items-start" style={{ maxWidth: "400px" }}>
@@ -508,14 +680,14 @@ function Home() {
                     <img src="./images/12.png" alt="Call Us" className="me-3" style={{ width: "50px" }} />
                     <div>
                       <h5 className="fw-bold">Have Any Questions?</h5>
-                      <p>+91 98201 27073</p>
+                      <a href="tel:+919820127073" style={{ color: "black", textDecoration: "none" }}>+91 98201 27073</a> {/* Corrected closing tag */}
                     </div>
                   </div>
                   <div className="d-flex align-items-start">
                     <img src="./images/9.png" alt="Mail Us" className="me-3" style={{ width: "50px" }} />
                     <div>
                       <h5 className="fw-bold">Mail Us</h5>
-                      <p>jashcorporation@gmail.com</p>
+                      <a href="mailto:jashcorporation@gmail.com" style={{ color: "black", textDecoration: "none" }}> jashcorporation@gmail.com</a>
                     </div>
                   </div>
                 </div>
@@ -525,35 +697,87 @@ function Home() {
 
           {/* Right Section - Contact Form */}
           <div className="col-md-6 order-md-2">
-            <div className="p-4 shadow rounded bg-light">
+            <div className="p-4 shadow-lg rounded bg-light">
               <h4 className="text-center mb-4">Send Us a Message</h4>
               <form>
                 <div className="row mb-3">
                   <div className="col">
-                    <input type="text" className="form-control" placeholder="Name" required />
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Name"
+                      required
+                      style={{
+                        borderRadius: "0.5rem",
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                      }}
+                    />
                   </div>
                   <div className="col">
-                    <input type="text" className="form-control" placeholder="Phone" required />
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Phone"
+                      required
+                      style={{
+                        borderRadius: "0.5rem",
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                      }}
+                    />
                   </div>
                 </div>
                 <div className="mb-3">
-                  <input type="email" className="form-control" placeholder="Email" required />
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
+                    required
+                    style={{
+                      borderRadius: "0.5rem",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                    }}
+                  />
                 </div>
                 <div className="mb-3">
-                  <input type="text" className="form-control" placeholder="Subject" required />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Subject"
+                    required
+                    style={{
+                      borderRadius: "0.5rem",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                    }}
+                  />
                 </div>
                 <div className="mb-3">
-                  <textarea className="form-control" rows="3" placeholder="Message" required></textarea>
+                  <textarea
+                    className="form-control"
+                    rows="3"
+                    placeholder="Message"
+                    required
+                    style={{
+                      borderRadius: "0.5rem",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                    }}
+                  ></textarea>
                 </div>
-                <button className="btn btn-primary w-100">Send Message</button>
+                <button
+                  className="btn btn-primary w-100 py-2 rounded-3 shadow"
+                  style={{ fontWeight: "bold", transition: "all 0.3s ease" }}
+                  onMouseOver={(e) => (e.target.style.backgroundColor = "#0051cc")}
+                  onMouseOut={(e) => (e.target.style.backgroundColor = "#0066FF")}
+                >
+                  Send Message
+                </button>
               </form>
             </div>
           </div>
-
         </div>
-
-
       </div>
+
+
+
       <div className="container my-5">
         <h1 className="text-center fw-bold mb-3">Find Us on Google Map</h1>
         <div className="d-flex justify-content-center">
@@ -602,13 +826,13 @@ function Home() {
               <h5 className="fw-bold">Quick Links</h5>
               <ul className="list-unstyled">
                 <li className="my-2">
-                  <span className="me-2">🏠</span> Home
+                  <span className="me-2" >🏠</span>< a href="/" style={{ color: "white", textDecoration: "none" }}> Home</a>
                 </li>
                 <li className="my-2">
-                  <span className="me-2">🛡️</span> About Us
+                  <span className="me-2">🛡️</span>< a href="/" style={{ color: "white", textDecoration: "none" }}> About Us</a>
                 </li>
                 <li className="my-2">
-                  <span className="me-2">💼</span> Products
+                  <span className="me-2">💼</span> < a href="/" style={{ color: "white", textDecoration: "none" }}>Products</a>
                 </li>
               </ul>
             </div>
@@ -620,18 +844,18 @@ function Home() {
                 <span className="me-2">📞</span> +91 98201 27073
               </p>
               <p className="mb-2">
-                <span className="me-2">✉️</span> jashcorporation@yahoo.co.in
+                <span className="me-2">✉️</span><a href="mailto:jashcorporation@yahoo.co.in" style={{ color: "white", textDecoration: "none" }}> jashcorporation@yahoo.co.in </a>
               </p>
               <p>
-                <span className="me-2">✉️</span> jashcorporation@gmail.com
+                <span className="me-2">✉️</span><a href="mailto:jashcorporation@gmail.com" style={{ color: "white", textDecoration: "none" }}>  jashcorporation@gmail.com</a>
               </p>
             </div>
           </div>
 
           {/* Copyright */}
           <div className="mt-3 border-top pt-3" style={{ fontSize: "14px" }}>
-            Copyright © 2024 JashCorporation. All Rights Reserved | Powered by
-            CodeStudios
+            Copyright © 2024 <a href="/" style={{ color: "white", textDecoration: "none" }}>JashCorporation</a>. All Rights Reserved | Powered by
+            <a href="https://codestudios.in/" style={{ color: "white", textDecoration: "none" }}> CodeStudios</a>
           </div>
         </div>
       </footer>
